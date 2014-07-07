@@ -1,0 +1,18 @@
+---
+title: "psData: Panel-Series Political Science Data"
+author: "Christopher Gandrud"
+date: "csv,conf: 15 July 2014"
+output:
+  revealjs_presentation:
+    theme: solarize
+    transition: none
+    incremental: true
+---
+
+## The Problem
+
+Test Text
+
+## Somethingelse
+
+Test
