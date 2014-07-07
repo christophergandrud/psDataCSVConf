@@ -7,28 +7,177 @@ output:
     theme: solarize
     transition: none
     incremental: true
+    highlight: kate
+    center: true
 ---
 
-## Problems (1)
+## Talk Aims
 
 <br>
 <br>
 
-Political science/panel-series data, when it's available,  
+- **Describe** political science/panel-series data problems.
+
+- **Introduce** `psData`, our first attempt at a solution.
+
+- **Thoughts** for future framework.
+
+- **Get ideas** for going forward/avoiding effort duplication. 
 
 
+## Good
 
-Political scientists waste *a lot* of time downloading and cleaning commonly used data sets.
+<br>
+<br>
+<br>
 
----
+Many political scientists are creating/making publicly available panel-series data sets.   
+
+<br>
+
+- [Database of Political Institutions](http://econ.worldbank.org/WBSITE/EXTERNAL/EXTDEC/EXTRESEARCH/0,,contentMDK:20649465~pagePK:64214825~piPK:64214943~theSitePK:469382,00.html)
+
+- [Polity](http://www.systemicpeace.org/polity/polity4.htm)
+
+- [Reinhart and Rogoff banking crisis varieties](http://www.carmenreinhart.com/data/browse-by-topic/topics/7/)
+
+## Issues
+
+<br>
+<br>
+
+- **Variety of formats** (SPSS, Stata, Excel, CSV).
+
+- **Variety of panel/series identifiers**, even for regularly used panels (especially countries).
+
+- Some variables are suggested by the literature (e.g. *winset*) and are composed of other variables, but **aren't regularly updated**.
+
+## Consequences
+
+<br>
+<br>
+
+- Political scientists (or RA's) **waste a lot** of time downloading/cleaning/transforming/merging commonly used data sets.
+    + **Effort Duplication**
+
+<br>
+
+- **Errors introduced** by data import and transformation scripts that are written individually and never shared across researchers 
+    + Don't benefit from virtual **pair programming**.
+
+## Solution
+
+<br>
+
+R package `psData`
 
 ![psData logo](img/psData_logo_v1.svg)
 
+## Goals
 
-## Future: 
+- **Avoid effort duplication** 
+    + Standardised functions to download/clean/transform political science/panel-series data sets.
+    + Easy to contribute new functions.
+    
+<br>
+    
+- **Standardised output**
+    + Makes it **easy to merge** multiple data sets with the same panel-series stucture.
+
+<br>
+
+- **Hosted on GitHub** 
+    + Updates and errors are (inevitably) made they can be **found and corrected** by anyone.
+    + Corrections **automatically** propogated via CRAN.
+
+## Master Build: Version 0.1.2
 
 <br>
 <br>
 
-From hack to framework
+- Master build on [CRAN](http://cran.r-project.org/web/packages/psData/index.html)
 
+- Silos each data set into its own *getter* or *creator* function.
+    + `DpiGet`
+    + `PolityGet`
+    + `RRCrisisGet`
+    + `WinsetCreator`
+    
+## Examples (getter)
+
+<br>
+
+```{r, eval=FALSE}
+
+# Load package
+library(psData)
+
+# Download/transform polity2 variable
+PolityData <- PolityGet(vars = "polity2")
+
+head(PolityData)
+##  iso2c     country year polity2
+##    AF Afghanistan 1800      -6
+##    AF Afghanistan 1801      -6
+##    AF Afghanistan 1802      -6
+##    AF Afghanistan 1803      -6
+##    AF Afghanistan 1804      -6
+##    AF Afghanistan 1805      -6
+
+```
+
+## Examples (getter)
+
+<br>
+
+```{r, eval=FALSE}
+# Download/transform Reinhart and Rogoff (2010)
+RRData <- RRCrisisGet()
+
+head(RRData)[1:5]
+##  iso2c country year RR_Independence RR_CurrencyCrisis
+##    AO  Angola 1800               0                 0
+##    AO  Angola 1801               0                 0
+##    AO  Angola 1802               0                 0
+##    AO  Angola 1803               0                 0
+##    AO  Angola 1804               0                 0
+##    AO  Angola 1805               0                 0
+```
+    
+## Example (creator)
+
+<br>
+
+```{r, eval=FALSE}
+# Create winset and selector variables
+WinsetData <- WinsetCreator()
+
+head(WinsetData)
+##  iso2c     country year    W ModS
+##    AF Afghanistan 1975 0.25    0
+##    AF Afghanistan 1976 0.25    0
+##    AF Afghanistan 1977 0.25    0
+##    AF Afghanistan 1989 0.50    0
+##    AF Afghanistan 1990 0.50    0
+##    AF Afghanistan 1991 0.50    0
+
+```
+    
+## Dev builds
+
+<br>
+<br>
+
+- **Development** with [rOpenGov](http://ropengov.github.io/).
+
+- Ideas we are playing with:
+    + Creating an [S4 R method](http://adv-r.had.co.nz/S4.html) for handling the downloaded data in a standard format.
+    + [Homebrew](http://brew.sh/)-style **recipies**, specifying how to download the data and including meta-data (e.g. BibTex citations).
+    + **Improve testing** (e.g. [testdat](https://github.com/ropensci/testdat)).  
+    + Integration with data **version tracking** (minimum SHA hashes, maybe [dat](http://dat-data.com/)).
+
+## Audience
+
+<br>
+
+- Ideas for avoiding effort duplication with others building open data frameworks.
