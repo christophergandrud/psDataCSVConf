@@ -1,5 +1,5 @@
 ---
-title: "psData: Panel-Series Political Science Data"
+title: "psData: Political Science Panel-Series Data"
 author: "Christopher Gandrud"
 date: "csv,conf: 15 July 2014"
 output:
@@ -9,10 +9,26 @@ output:
     incremental: true
 ---
 
-## The Problem
+## Problems (1)
 
-Test Text
+<br>
+<br>
 
-## Somethingelse
+Political science/panel-series data, when it's available,  
 
-Test
+
+
+Political scientists waste *a lot* of time downloading and cleaning commonly used data sets.
+
+---
+
+![psData logo](img/psData_logo_v1.svg)
+
+
+## Future: 
+
+<br>
+<br>
+
+From hack to framework
+
