@@ -14,7 +14,6 @@ output:
 ## Talk Aims
 
 <br>
-<br>
 
 - **Describe** political science/panel-series data problems.
 
@@ -27,8 +26,6 @@ output:
 
 ## Good
 
-<br>
-<br>
 <br>
 
 Many political scientists are creating/making publicly available panel-series data sets.   
@@ -44,17 +41,15 @@ Many political scientists are creating/making publicly available panel-series da
 ## Issues
 
 <br>
-<br>
 
 - **Variety of formats** (SPSS, Stata, Excel, CSV).
 
 - **Variety of panel/series identifiers**, even for regularly used panels (especially countries).
 
-- Some variables are suggested by the literature (e.g. *winset*) and are composed of other variables, but **aren't regularly updated**.
+- Some variables are suggested by the literature (e.g. *winset*) are composed of other variables, but **aren't regularly updated**.
 
 ## Consequences
 
-<br>
 <br>
 
 - Political scientists (or RA's) **waste a lot** of time downloading/cleaning/transforming/merging commonly used data sets.
@@ -69,7 +64,7 @@ Many political scientists are creating/making publicly available panel-series da
 
 <br>
 
-R package `psData`
+R package [`psData`](https://github.com/rOpenGov/psData)
 
 ![psData logo](img/psData_logo_v1.svg)
 
@@ -77,7 +72,7 @@ R package `psData`
 
 - **Avoid effort duplication** 
     + Standardised functions to download/clean/transform political science/panel-series data sets.
-    + Easy to contribute new functions.
+    + **Easy to contribute** new functions.
     
 <br>
     
@@ -92,7 +87,6 @@ R package `psData`
 
 ## Master Build: Version 0.1.2
 
-<br>
 <br>
 
 - Master build on [CRAN](http://cran.r-project.org/web/packages/psData/index.html)
@@ -168,7 +162,7 @@ head(WinsetData)
 <br>
 <br>
 
-- **Development** with [rOpenGov](http://ropengov.github.io/).
+- **Development** at [rOpenGov](http://ropengov.github.io/).
 
 - Ideas we are playing with:
     + Creating an [S4 R method](http://adv-r.had.co.nz/S4.html) for handling the downloaded data in a standard format.
@@ -180,4 +174,14 @@ head(WinsetData)
 
 <br>
 
-- Ideas for avoiding effort duplication with others building open data frameworks.
+Ideas for avoiding effort duplication with others building open data frameworks?
+
+## Contact
+
+<br>
+
+Twitter: <a href="https://twitter.com/ChrisGandrud>@chrisgandrud</a>
+
+<br>
+
+GitHub: <a href="https://github.com/rOpenGov/psData">rOpenGov/psData</a>
