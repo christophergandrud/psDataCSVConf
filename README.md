@@ -1,4 +1,4 @@
-psDataCSVConf
+psData csv,conf
 =============
 
-Talk on psData for csvConf 2014
+Talk on the *psData* package/project for [csvConf 2014](http://csvconf.com/).
