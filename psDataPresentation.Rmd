@@ -1,5 +1,5 @@
 ---
-title: "psData: Political Science Panel-Series Data (v1)"
+title: "psData: Political Science Panel-Series Data (v2)"
 author: "Christopher Gandrud"
 date: "csv,conf: 15 July 2014"
 output:
@@ -28,7 +28,7 @@ output:
 
 <br>
 
-Many political scientists are creating/making publicly available panel-series data sets.   
+Many political scientists are creating/making publicly available panel-series data sets!   
 
 <br>
 
@@ -43,17 +43,21 @@ Many political scientists are creating/making publicly available panel-series da
 <br>
 
 - **Variety of formats** (SPSS, Stata, Excel, CSV).
-
+    + Excel data is often a **mess**.
+    
 - **Variety of panel/series identifiers**, even for regularly used panels (especially countries).
 
-- Some variables are suggested by the literature (e.g. *winset*) are composed of other variables, but **aren't regularly updated**.
+- Some **variables** are suggested by the literature (e.g. *winset*) are composed of other variables, but **aren't regularly updated**.
+
+---
+
+![RR Screenshot](img/RR_Screenshot.png)
 
 ## Consequences
 
 <br>
 
-- Political scientists (or RA's) **waste a lot** of time downloading/cleaning/transforming/merging commonly used data sets.
-    + **Effort Duplication**
+- **Effort Duplication**: Political scientists (or RA's) **waste a lot** of time *downloading/cleaning/transforming/merging* commonly used data sets.
 
 <br>
 
@@ -68,22 +72,29 @@ R package [`psData`](https://github.com/rOpenGov/psData)
 
 ![psData logo](img/psData_logo_v1.svg)
 
-## Goals
+## Goals (1)
+
+<br>
 
 - **Avoid effort duplication** 
     + Standardised functions to download/clean/transform political science/panel-series data sets.
     + **Easy to contribute** new functions.
     
+## Goals (2)
+
 <br>
-    
+ 
 - **Standardised output**
     + Makes it **easy to merge** multiple data sets with the same panel-series stucture.
 
+## Goals (3)
+
 <br>
 
-- **Hosted on GitHub** 
+- **Viral/quick error fixes**
     + Updates and errors are (inevitably) made they can be **found and corrected** by anyone.
-    + Corrections **automatically** propogated via CRAN.
+    + Development hosted on **GitHub** 
+    + Corrections **automatically** propogated via **CRAN**.
 
 ## Master Build: Version 0.1.2
 
@@ -96,6 +107,8 @@ R package [`psData`](https://github.com/rOpenGov/psData)
     + `PolityGet`
     + `RRCrisisGet`
     + `WinsetCreator`
+    
+- *Creator* functions source *getter* functions for raw data.
     
 ## Examples (getter)
 
