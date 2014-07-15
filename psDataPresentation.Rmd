@@ -38,7 +38,15 @@ Many political scientists are creating/making publicly available panel-series da
 
 - [Reinhart and Rogoff banking crisis varieties](http://www.carmenreinhart.com/data/browse-by-topic/topics/7/)
 
-## Issues
+## Issues (1)
+
+<br>
+
+- Data **tied to particular studies**. 
+
+- Data **posted and maintained haphzardly**.
+
+## Issues (2)
 
 <br>
 
@@ -62,7 +70,7 @@ Many political scientists are creating/making publicly available panel-series da
 <br>
 
 - **Errors introduced** by data import and transformation scripts that are written individually and never shared across researchers 
-    + Don't benefit from virtual **pair programming**.
+    + Don't benefit from **code review**.
 
 ## Solution
 
@@ -77,7 +85,7 @@ R package [`psData`](https://github.com/rOpenGov/psData)
 <br>
 
 - **Avoid effort duplication** 
-    + Standardised functions to download/clean/transform political science/panel-series data sets.
+    + Standardised functions to *download/clean/transform* political science/panel-series data sets.
     + **Easy to contribute** new functions.
     
 ## Goals (2)
